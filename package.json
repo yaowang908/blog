@@ -37,7 +37,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "docker:init": "docker-compose run --rm web npx degit https://github.com/gatsbyjs/gatsby-starter-default . --force && docker:rebuild",
     "docker:rebuild": "docker-compose up --build",
-    "docker:dev": "docker-compose down && docker-compose up"
+    "docker:dev": "docker-compose down && docker-compose up",
+    "deploy": "gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
