@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^4.7.1",
+    "gatsby-cli": "^4.7.0",
     "gatsby-plugin-gatsby-cloud": "^4.7.0",
     "gatsby-plugin-image": "^2.7.0",
     "gatsby-plugin-manifest": "^4.7.0",
@@ -29,16 +30,16 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0 -p 9000",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
+    "start": "gatsby develop -H 0.0.0.0 -p 9000",
+    "serve": "gatsby serve -H 0.0.0.0 -p 9000",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "docker:init": "docker-compose run --rm web npx degit https://github.com/gatsbyjs/gatsby-starter-default . --force && docker:rebuild",
     "docker:rebuild": "docker-compose up --build",
     "docker:dev": "docker-compose down && docker-compose up",
-    "deploy": "gh-pages -d public -b main"
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "repository": {
     "type": "git",
